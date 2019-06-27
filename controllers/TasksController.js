@@ -46,8 +46,13 @@ module.exports = {
   async updateTask(req, res) {
     try {
       const { id } = req.params;
-      const { name } = req.body;
-      const updatedTask = await TaskModel.findByIdAndUpdate(id, { name }, (err, task) => {
+      const { name, columnId } = req.body;
+
+      let params = {};
+
+      name ? params = { name } : params = { columnId };
+
+      const updatedTask = await TaskModel.findByIdAndUpdate(id, params, (err, task) => {
         if (err) return err;
 
         return task;
