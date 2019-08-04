@@ -4,16 +4,22 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
+    "connect-mongo": "^3.0.0",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "express": "^4.17.0",
+    "express-session": "^1.16.2",
     "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
     "mongo-seeding-cli": "^3.1.1",
     "mongoose": "^5.5.11",
     "morgan": "^1.9.1",
     "node-env-file": "^0.1.8",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0"
   },
   "scripts": {
     "serve": "nodemon app.js --dev",
