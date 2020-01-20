@@ -1,12 +1,13 @@
-const { getTasks, createTask, getTaskById, updateTask, deleteTask } = require('../controllers/TasksController');
+const {
+  getTasks, createTask, getTaskById, updateTask, deleteTask,
+} = require('../controllers/TasksController');
 const { getColumns } = require('../controllers/ColumnsController');
+const { getRandomPhoto } = require('../controllers/ImageController');
 
 // const {} = require('');
 
 module.exports = (app) => {
-  app.get('/', (req, res) => {
-    return res.send('Hello world!');
-  });
+  app.get('/', (req, res) => res.send('Hello world!'));
 
   // operations with tasks
   app.get('/tasks', getTasks);
@@ -21,4 +22,5 @@ module.exports = (app) => {
   app.patch('/column/:id');
   app.delete('/column/:id');
 
+  app.get('/random-photo', getRandomPhoto);
 };
